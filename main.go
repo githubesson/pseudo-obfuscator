@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"math/rand"
@@ -11,6 +12,10 @@ import (
 	"strings"
 	"time"
 )
+
+type Config struct {
+	StringLength int `json:"stringLength"`
+}
 
 func main() {
 	if len(os.Args) < 2 {
@@ -79,8 +84,21 @@ func readFunctionList(filename string) ([]string, error) {
 
 func generateFunctionMap(functions []string) map[string]string {
 	functionMap := make(map[string]string)
+
+	filePath := "config.json"
+	jsonData, err := ioutil.ReadFile(filePath)
+	if err != nil {
+		fmt.Println("Error reading JSON file:", err)
+	}
+
+	var config Config
+	err = json.Unmarshal(jsonData, &config)
+	if err != nil {
+		fmt.Println("Error unmarshaling JSON:", err)
+	}
+
 	for _, function := range functions {
-		newName := generateRandomName(25)
+		newName := generateRandomName(config.StringLength)
 		functionMap[function] = newName
 	}
 	return functionMap
