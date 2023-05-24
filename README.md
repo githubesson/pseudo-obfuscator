@@ -45,7 +45,7 @@ After it's done obfuscating, you can compile your project as you regularly would
 
 #### Why would I even use this?
 
-This tool might be useful if you need to generate new builds of the same software somewhat regularly. It helps with evading file crosschecking.
+This tool might be useful if you need to generate new builds of the same software somewhat regularly. It helps with evading file crosschecking. Also it comes in handy with ghidra binary inspection evasion.
 
 ## Contact
 
