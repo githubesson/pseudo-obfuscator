@@ -49,7 +49,7 @@ This tool might be useful if you need to generate new builds of the same softwar
 
 ## Contact
 
-If you have any questions/need help with this project dm me on discord @ esson#1400.
+If you have any questions/need help with this project dm me on discord @ esson.
 
 
 ## License
